@@ -38,7 +38,7 @@ def simple_call(prompt):
     rsp = ImageSynthesis.call(model=ImageSynthesis.Models.wanx_v1,
                               prompt=prompt,
                               n=1,
-                              size='480*320')
+                              size='1280*720')
     if rsp.status_code == HTTPStatus.OK:
         print(rsp.output)
         print(rsp.usage)
