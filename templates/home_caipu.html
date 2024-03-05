@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>菜谱生成器</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #449d44;
+        }
+    </style>
+<script>
+        function checkInput() {
+            // 获取用户输入的食材
+            var ingredients = document.getElementById('ingredients').value;
+
+            // 如果输入为空，显示警告消息并阻止表单的提交
+            if (!ingredients) {
+                alert('请输入食材！');
+                return false;
+            }
+            // 如果输入不为空，显示提示消息并允许表单的提交
+            alert('菜谱正在生成，请耐心等待');
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎来到菜谱生成器</h1>
+    <!-- 注意这里的onsubmit属性已经改为'checkInput()' -->
+    <form action="/generate_recipe" method="get" onsubmit="return checkInput();">
+        <label for="ingredients">请输入食材：</label>
+        <input type="text" id="ingredients" name="ingredients">
+        <input type="submit" value="生成菜谱">
+    </form>
+</body>
+</html>

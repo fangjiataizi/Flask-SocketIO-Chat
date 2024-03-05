@@ -1,8 +1,8 @@
 Flask-SocketIO-Chat
 ===================
 
-A simple chat application that demonstrates how to structure a Flask-SocketIO application.
+智能客服
+    $ python app.py
 
-To run this application install the requirements in a virtual environment, run `python chat.py` and visit `http://localhost:5000` on one or more browser tabs.
-
-    $ python chat.py
+菜谱生成
+    $ python app_caipu.py
